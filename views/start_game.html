@@ -1,0 +1,42 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" >GAME</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li class="active"><a href="/game/">Game</a></li>
+          <li><a href="/tutorial/">Tutorial</a></li>
+          <li><a href="/gallery/">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+
+
+
+
+        <button onclick="timer = setInterval(myTimer, 1000);">Start Game</button>
+
+      <p id="demo"></p>
+      <script>
+        var i = 0;
+        function myTimer() {
+          var d = ["q","w","e","r","t","a","b","d","j"]
+          document.getElementById("demo").innerHTML = d[i++];
+          if(i>d.length) {
+            clearInterval(timer)
+            document.getElementById("demo").innerHTML = "มี b อยู่หลัง a หรือไม่"
+          }
+  }
+  </script>
+    </div>
+  </body>
+</html>
