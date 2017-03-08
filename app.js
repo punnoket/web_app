@@ -17,12 +17,13 @@ app.get('/tutorial', function getHomePage(req, res) {
 });
 
 
-app.get('/about', function getAboutPage(req, res) {
-    res.send('<h1>This is about page.</h1>');
-});
-
 app.get('/game', function getAboutPage(req, res) {
     res.sendFile(__dirname + '/views/start_game.html');
+});
+
+app.get('/point', function getPoint(req, res) {
+    var body = req.body;
+    console.log(body);
 });
 
 var server = app.listen(8080, function() {
