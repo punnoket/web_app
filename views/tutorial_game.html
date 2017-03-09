@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>gamePage</title>
+        <meta charset="UTF-8">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/lib/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            body, h1,h2,h3,h4,h5{font-family: "Montserrat", sans-serif}
+            .w3-row-padding img {margin-bottom: 12px}
+            /* Set the width of the sidenav to 120px */
+            .w3-sidenav {width: 120px;background: #222;}
+            /* Add a left margin to the "page content" that matches the width of the sidenav (120px) */
+            #main {margin-left: 120px}
+            /* Remove margins from "page content" on small screens */
+            @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+            hh1 {
+                text-align: center;
+                text-transform: uppercase;
+                color: #4CAF50;
+            }
+            p {
+                text-indent: 50px;
+                text-align: justify;
+                letter-spacing: 3px;
+            }
+            a {
+                text-decoration:none;
+                color: #008CBA;
+            }
+            h6 {
+                font-family: "Montserrat", sans-serif;
+                font-size: 18px;
+            }
+
+
+
+        </style>
+
+
+    </head>
+    <body class="w3-black">
+
+
+<div class="w3-padding-large" id="gameMain">
+
+    <header class="w3-container w3-padding-32 w3-center w3-black" id="game">
+        <img src="https://www.mx7.com/i/c13/fXPV1c.png" alt="blink" class="w3-image" width="150" height="150">
+        <div class="w3-container w3-center w3-animate-top">
+            <h1 class="w3-jumbo"> Attentional Blink</h1>
+        </div>
+    </header>
+    <br>
+    <br>
+
+        <div class="w3-col w3-container w3-round  m4 l2 w3-black">
+
+        </div>
+
+        <div class="w3-col w3-container w3-round  m10 l9 w3-white">
+            <h1>ขั้นตอนการเล่น</h1>
+
+            <h6>
+                1.  ระบบจะกำหนดตัวอักษรหรือตัวเลขให้ 2 ตัว (สมมติว่าเป็นตัวอักษร A และ B) เพื่อให้ท่านมองหาว่า ตัวอักษรหรือตัวเลขทั้ง 2 ตัวนี้<br>
+                    จะปรากฏขึ้นติดต่อกันหรือไม่ ในชุดตัวอักษรหรือชุดตัวเลขที่ระบบจะ แสดงทีละตัวจนครบชุด (สมมติว่าชุดตัวอักษรประกอบด้วย A N M P O I Q S ตามลำดับ)<br>
+                2.  ระบบจะทำการนับถอยหลัง 3 วินาที เพื่อให้ท่านเตรียมตัวก่อนที่ชุดอักษรหรือชุดตัวเลขจะปรากฏขึ้น<br>
+                3.  เมื่อระบบนับถอยหลังถึง 0 แล้ว ระบบจะแสดงตัวอักษรหรือตัวเลขทีละตัวจนครบชุด ด้วยความเร็ว ประมาณ 1 วินาทีต่อตัวอักษรหรือตัวเลข<br>
+                4.  ให้ท่านค้นหาตัวอักษรหรือตัวเลขตามที่กำหนดในข้อ 1. จากชุดตัวอักษรที่ปรากฏ<br>
+                5.  ระบบจะแสดงตัวเลือก โดยให้ท่านเลือกว่าท่านมอง เห็น หรือ ไม่เห็นตัวอักษรหรือตัวเลขตามที่กำหนดในชุดตัวอักษร หรือชุดตัวเลขนั้น
+                <br><br>
+                (ในตัวอย่าง A และ B ไม่ได้ปรากฏขึ้นติดต่อกัน)
+
+            </h6>
+
+
+        </div>
+
+       <div class="w3-col w3-container w3-round  m4 l2 w3-black">
+
+       </div>
+
+       <table style="width:70%">
+           <tr>
+               <th><h3><a onclick="goBack()" class="btn btn-info btn-lg w3-red"><span class="glyphicon glyphicon-chevron-left"></span> ย้อนกลับ</a></h3></th>
+               <th><h3><a href="/game" class="btn btn-info btn-lg w3-Turquoise" style="width:50%"><span class="glyphicon glyphicon-play"></span> เล่น</a></h3></th>
+
+               <script>
+                  function goBack() {
+                      window.history.back();
+                  }
+                </script>
+
+
+           </tr>
+       </table>
+
+
+
+
+</div>
+
+
+
+
+</html>

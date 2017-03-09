@@ -1,28 +1,91 @@
-
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" >HOME</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Home</a></li>
-          <li><a href="/game/">Game</a></li>
-          <li><a href="/tutorial/">Tutorial</a></li>
-          <li><a href="/gallery/">About</a></li>
+    <head>
+        <title>WEBAPP123</title>
+        <meta charset="UTF-8">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/lib/w3.css">
 
-        </ul>
-      </div>
-    </nav>
-    <div class="container">
+        <style>
+            body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+
+            .w3-row-padding img {margin-bottom: 12px}
+            /* Set the width of the sidenav to 120px */
+            .w3-sidenav {width: 120px;background: #222;}
+            /* Add a left margin to the "page content" that matches the width of the sidenav (120px) */
+            #main {margin-left: 120px}
+            /* Remove margins from "page content" on small screens */
+            @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+        </style>
 
 
+    </head>
+    <body class="w3-black">
 
-    </div>
-  </body>
+<!-- Icon Bar (Sidenav - hidden on small screens) -->
+<nav class="w3-sidenav w3-center w3-small w3-hide-small">
+
+
+  <a class="w3-padding-large w3-black" href="#">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>หน้าแรก</p>
+  </a>
+  <a class="w3-padding-large w3-hover-black" href="#about">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>เกี่ยวกับ</p>
+  </a>
+
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a class="w3-bar-item w3-button" style="width:25% !important" href="#">หน้าแรก</a>
+    <a class="w3-bar-item w3-button" style="width:25% !important" href="#about">เกี่ยวกับ</a>
+
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"> Enjoy the game!</h1>
+    <!--<p>let's goooooo</p>-->
+    <img src="https://www.mx7.com/i/ce5/xw3QTp.jpg" alt="brain" class="w3-image" width="900" height="1000">
+    <br>
+    <br>
+    <h3><button onclick="window.location='/tutorial_game';" class="w3-btn w3-round w3-blue" style="width:68%">Start</button></h3>
+
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">เกี่ยวกับ</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <h5><p><span class="w3-hide-small">ในปัจจุบัน   </span>เทคโนโลยีคอมพิวเตอร์นับได้ว่ามีความสำคัญต่อมนุษย์อย่างมาก เนื่องจากคอมพิวเตอร์ได้เป็นส่วนหนึ่งของการทำงานหลาย ๆ อย่าง เพื่อช่วยลดภาระการทำงานของมนุษย์ลง
+        แต่อย่างไรก็ดี ถึงแม้ว่าคอมพิวเตอร์ในปัจจุบันมีประสิทธิภาพมากขึ้นและสามารถทำงานได้อย่างอิสระ ระบบคอมพิวเตอร์ยังถือว่าเป็นเครื่องมือในการทำงาน และยังจำเป็นต้องอาศัยมนุษย์
+        เป็นผู้ควบคุมการทำงานเป็นหลักนอกเหนือจากความสามารถเชิงเทคนิคแล้ว ปัจจัยหนึ่งซึ่งบ่งชี้ถึงประสิทธิภาพของระบบคอมพิวเตอร์ก็คือความยากง่ายในการใช้งานของระบบการออกแบบระบบคอมพิวเตอร์
+        เพื่อให้ผู้ใช้สามารถใช้งานได้ง่ายนั้น จำเป็นต้องมีความรู้ความเข้าใจเรื่องการปฏิสัมพันธ์ระหว่างมนุษย์และคอมพิวเตอร์ และปัจจัยหลักซึ่งส่งผลต่อวิธีการปฏิสัมพันธ์ระหว่างมนุษย์
+        และคอมพิวเตอร์นั้น ก็คือวิธีการประมวลสารสนเทศของมนุษย์ หากผู้พัฒนาระบบมีความเข้าใจในวิธีการประมวลสารสนเทศของมนุษย์ผู้พัฒนาจะสามารถออกแบบระบบที่ตอบสนองการปฏิสัมพันธ์
+        ระหว่างมนุษย์และคอมพิวเตอร์ได้อย่างมีประสิทธิภาพ
+    </p></h5>
+
+  </div>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+
+    </body>
 </html>
