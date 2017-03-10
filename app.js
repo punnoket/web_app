@@ -35,9 +35,9 @@ app.post('/point', function getPoint(req, res) {
     console.log(body);
 });
 
-app.post('/question', function (req, res) {
+app.get('/question', function (req, res) {
     console.log(question.detail);
-    res.end(JSON.stringify(question));
+    res.json(question);
 
 });
 

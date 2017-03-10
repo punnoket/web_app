@@ -77,17 +77,35 @@ and open the template in the editor.
 
             <h6>
               <button onclick="timer = setInterval(myTimer, 1000);">Start Game</button>
-              <form action="/question" method="post">
-                  <button type="submit" id="y" value="yes" name="answer">click</button><br>
 
-            </form>
 
+            <script>
+
+
+            </script>
             <p id="demo"></p>
             <script>
-              var i = 0;
+            var d ;
+            var ran = Math.floor((Math.random() * 3));
+          
+            $.ajax({
+                  url: '/question',
+                  complete: function(data, err) {
+                  console.log(err);
 
+                  console.log(data.responseJSON.no);
+                  if(ran==0)
+                  d = data.responseJSON.no1;
+                  if(ran==1)
+                  d = data.responseJSON.no2;
+                  if(ran==2)
+                  d = data.responseJSON.no3;
+
+                }
+              });
+
+              var i = 0;
               function myTimer() {
-                var d = ["q","w","e","r","t","a","b","d","j"]
                 document.getElementById("demo").innerHTML = d[i++];
                 document.getElementById("y").style.visibility = "hidden";
                 document.getElementById("n").style.visibility = "hidden";
