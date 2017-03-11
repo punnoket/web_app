@@ -7,6 +7,9 @@ var fs = require('fs');
 var obj;
 var score ;
 var jsonScore;
+var jsonfile = require('jsonfile')
+var file = './score.json'
+
 
 
 app.use(bodyParser.json());
@@ -43,11 +46,22 @@ app.get('/question', function (req, res) {
 
 });
 
+app.post('/write_file', function (req, res) {
+    writeFile();
+});
+
+
 app.get('/get_score', function (req, res) {
      jsonScore={"score" : score}
      res.json(jsonScore);
 
 });
+jsonfile.writeFile(file, jsonScore, function(err) {
+  console.log(err);
+});
+function writeFile() {
+
+}
 
 var server = app.listen(8080, function() {
     console.log('Express is running on port 8080.');
