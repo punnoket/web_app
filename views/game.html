@@ -81,10 +81,10 @@ and open the template in the editor.
             <button type="submit" id="n" value="no" name="answer" onclick="onclickScoreNo()">ไม่</button><br>-->
 
             <center><h2>จงมีสมาธิ !!</h2>
-            <h3 id = "no"></h3>/3</center>
+            <p1 id = "no"></p1><p2 id="slash">/3<p2></center>
 
 
-              <center><h3><a onclick="changepoint()" id="start" class="btn btn-info btn-lg w3-blue" style="width:60%" >Start Game</button></a></h3></center>
+              <center><h3><a onclick="changepoint()" id="start" class="btn btn-info btn-lg w3-blue" style="width:30%" >Start Game</button></a></h3></center>
 
           <center><h1 id="demo"></h1></center>
 
@@ -101,10 +101,12 @@ and open the template in the editor.
       </form>
 
       <script>
-    var no = 1;
-    var noStr = no +"/3"
-    var score = 0;
-    var parseScore = document.getElementById("score");
+
+      var no = 1;
+      var noStr = no +"/3"
+      var score = 0;
+      var parseScore = document.getElementById("score");
+      document.getElementById("slash").style.visibility = "hidden";
 
       function onclickScoreYes() {
 
@@ -123,6 +125,7 @@ and open the template in the editor.
           document.getElementById("n").style.visibility = "hidden";
           document.getElementById("score").style.visibility = "visible";
           document.getElementById("no").style.visibility = "hidden";
+          document.getElementById("slash").style.visibility = "hidden";
 
         }else{
 
@@ -146,6 +149,7 @@ and open the template in the editor.
           document.getElementById("n").style.visibility = "hidden";
           document.getElementById("score").style.visibility = "visible";
           document.getElementById("no").style.visibility = "hidden";
+          document.getElementById("slash").style.visibility = "hidden";
 
 
         }else{
@@ -203,6 +207,8 @@ and open the template in the editor.
             document.getElementById("demo").innerHTML = "มี b อยู่หลัง a หรือไม่"
             document.getElementById("y").style.visibility = "visible";
             document.getElementById("n").style.visibility = "visible";
+            document.getElementById("slash").style.visibility = "visible";
+
 
             i=0;
           }
