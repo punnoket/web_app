@@ -76,66 +76,91 @@ and open the template in the editor.
             <h1>จงมีสมาธิ !!</h1>
 
             <h6>
-              <button onclick="timer = setInterval(myTimer, 1000);">Start Game</button>
+              <button onclick="timer = setInterval(myTimer, 200);">Start Game</button>
 
             <p id="demo"></p>
-            <script>
-            var d ;
-            var ran = Math.floor((Math.random() * 3));
-
-            $.ajax({
-                  url: '/question',
-                  complete: function(data, err) {
-
-                  if(ran==0)
-                  d = data.responseJSON.no1;
-                  if(ran==1)
-                  d = data.responseJSON.no2;
-                  if(ran==2)
-                  d = data.responseJSON.no3;
-
-                }
-              });
-
-              var i = 0;
-              function myTimer() {
-                document.getElementById("demo").innerHTML = d[i++];
-                document.getElementById("y").style.visibility = "hidden";
-                document.getElementById("n").style.visibility = "hidden";
-                if(i>d.length) {
-                  clearInterval(timer)
-                  document.getElementById("demo").innerHTML = "มี b อยู่หลัง a หรือไม่"
-                  document.getElementById("y").style.visibility = "visible";
-                  document.getElementById("n").style.visibility = "visible";
-                }
-        }
 
 
-        </script>
+            <button type="submit" id="y" value="yes" name="answer" onclick="onclickScoreYes()">ใช่</button><br>
+            <button type="submit" id="n" value="no" name="answer" onclick="onclickScoreNo()">ไม่</button><br>
 
-            <button type="submit" id="y" value="yes" name="answer" onclick="onclickScore()">ใช่</button><br>
-            <button type="submit" id="n" value="no" name="answer">ไม่</button><br>
 
       <form action="/point" method="post">
            <button type="submit" id="score" value="score" name="scorename">ไปดูคะแนนกันเลย</button><br>
 
       </form>
 
-
       <script>
-      var score = 0;
-          function onclickScore() {
-              score ++ ;
-                console.log(score);
-                var parseScore = document.getElementById("score");
-                parseScore.value = score.toString();
-            }
+      var questionObject = {"key" : "value"} ;
+      var ran = Math.floor((Math.random() * 3));
+      document.getElementById("y").style.visibility = "hidden";
+      document.getElementById("n").style.visibility = "hidden";
+      document.getElementById("score").style.visibility = "hidden";
 
-      </script>
+      $.ajax({
+            url: '/question',
+            async:false,
+            complete: function(data, err) {
+
+            if(ran==0)
+            questionObject = data.responseJSON.no1;
+            if(ran==1)
+            questionObject = data.responseJSON.no2;
+            if(ran==2)
+            questionObject = data.responseJSON.no3;
+
+
+          }
+        });
+
+        d = questionObject.detail
+        var i = 0;
+        function myTimer() {
+          document.getElementById("demo").innerHTML = d[i++];
+
+          if(i>d.length) {
+            clearInterval(timer)
+            document.getElementById("demo").innerHTML = "มี b อยู่หลัง a หรือไม่"
+            document.getElementById("y").style.visibility = "visible";
+            document.getElementById("n").style.visibility = "visible";
+            document.getElementById("score").style.visibility = "visible";
+          }
+        }
+    var score = 0;
+    var parseScore = document.getElementById("score");
+      function onclickScoreYes() {
+        console.log("click");
+        if(questionObject.answer.localeCompare(document.getElementById("y").value)==0) {
+          score ++ ;
+            console.log(score);
+
+            parseScore.value = score.toString();
+        }
+        if(questionObject.answer.localeCompare(document.getElementById("n").value)==0) {
+          score ++ ;
+            console.log(score);
+
+            parseScore.value = score.toString();
+        }
+      }
+      function onclickScoreYes() {
+        console.log("click");
+        if(questionObject.answer.localeCompare(document.getElementById("y").value)==0) {
+          score ++ ;
+
+        }
+        parseScore.value = score.toString();
+      }
+      function onclickScoreNo() {
+      if(questionObject.answer.localeCompare(document.getElementById("n").value)==0) {
+        score ++ ;
+
+      }
+        parseScore.value = score.toString();
+    }
+  </script>
 
             </h6>
-
-
         </div>
 
        <div class="w3-col w3-container w3-round  m4 l2 w3-black">
