@@ -73,20 +73,20 @@ and open the template in the editor.
         </div>
 
         <div class="w3-col w3-container w3-round  m10 l9 w3-white">
-            <h1>จงมีสมาธิ !!</h1>
-
-            <h6>
-              <button onclick="timer()">Start Game</button>
-
-            <p id="demo"></p>
+              <center><h2>จงมีสมาธิ !!</h2></center>
 
 
-            <button type="submit" id="y" value="yes" name="answer" onclick="onclickScoreYes()">ใช่</button><br>
-            <button type="submit" id="n" value="no" name="answer" onclick="onclickScoreNo()">ไม่</button><br>
+                <center><h3><a onclick="timer()" class="btn btn-info btn-lg w3-blue" style="width:60%" >Start Game</button></a></h3></center>
 
+            <center><h1 id="demo"></h1></center>
+
+            <center><div class="relative">
+                <h3><a type="submit" id="y" value="yes" name="answer" onclick="onclickScoreYes()" class="btn btn-info btn-lg w3-red" style="width:50%" > ใช่ </a></h3>
+                <h3><a type="submit" id="n" value="no" name="answer" onclick="onclickScoreNo()" class="btn btn-info btn-lg w3-Turquoise" style="width:50%" > ไม่ใช่ </a></h3><br>
+            </div></center>
 
       <form action="/point" method="post">
-           <button type="submit" id="score" value="score" name="scorename">ไปดูคะแนนกันเลย</button><br>
+          <h3 align = 'right'> <button class="btn btn-info btn-lg w3-blue" type="submit" id="score" value="score" name="scorename">ไปดูคะแนนกันเลย</button></h3><br>
 
       </form>
 
@@ -94,7 +94,7 @@ and open the template in the editor.
 
       function timer() {
         var ranTime = Math.floor((Math.random() * 4));
-        var time = [200, 400, 800, 1000];
+        var time = [200, 400, 800, 1000]
         timer = setInterval(myTimer, time[ranTime]);
       }
 
