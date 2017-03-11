@@ -113,22 +113,23 @@ and open the template in the editor.
 
         </script>
 
-            <button  id="y" value="yes" name="answer" onclick="onclickScore()">ใช่</button><br>
-            <button  id="n" value="no" name="answer">ไม่</button><br>
+            <button type="submit" id="y" value="yes" name="answer" onclick="onclickScore()">ใช่</button><br>
+            <button type="submit" id="n" value="no" name="answer">ไม่</button><br>
 
-            <from action="/tutorial_game" method="post" type="submit" >
-              <button  id="score" value="no" name="sc">ไปดูคะแนนกันเลย</button><br>
-            </from>
+      <form action="/point" method="post">
+           <button type="submit" id="score" value="score" name="scorename">ไปดูคะแนนกันเลย</button><br>
+
+      </form>
+
+
       <script>
       var score = 0;
           function onclickScore() {
               score ++ ;
                 console.log(score);
+                var parseScore = document.getElementById("score");
+                parseScore.value = score.toString();
             }
-
-            var parseScore = document.getElementById("score");
-            parseScore.value = score.toString();
-            console.log(parseScore);
 
       </script>
 

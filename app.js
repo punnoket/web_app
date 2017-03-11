@@ -5,7 +5,8 @@ var path = require("path");
 var question ;
 var fs = require('fs');
 var obj;
-var score = 0;
+var score ;
+var jsonScore;
 
 
 app.use(bodyParser.json());
@@ -32,13 +33,19 @@ app.get('/game', function getAboutPage(req, res) {
 });
 
 app.post('/point', function getPoint(req, res) {
-    var body = req.body.sc;
-    console.log(body);
+    score = req.body.scorename;
+    res.sendFile(__dirname + '/views/score.html');
 
 });
 
 app.get('/question', function (req, res) {
      res.json(question);
+
+});
+
+app.get('/get_score', function (req, res) {
+     jsonScore={"score" : score}
+     res.json(jsonScore);
 
 });
 
