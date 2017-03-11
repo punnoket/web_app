@@ -2,9 +2,10 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require("path");
-//var question = require('./question');
+var question ;
 var fs = require('fs');
 var obj;
+var score = 0;
 
 
 app.use(bodyParser.json());
@@ -31,13 +32,13 @@ app.get('/game', function getAboutPage(req, res) {
 });
 
 app.post('/point', function getPoint(req, res) {
-    var body = req.body.answer;
+    var body = req.body.sc;
     console.log(body);
+
 });
 
 app.get('/question', function (req, res) {
-    console.log(question.detail);
-    res.json(question);
+     res.json(question);
 
 });
 

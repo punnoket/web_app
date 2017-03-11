@@ -78,22 +78,15 @@ and open the template in the editor.
             <h6>
               <button onclick="timer = setInterval(myTimer, 1000);">Start Game</button>
 
-
-            <script>
-
-
-            </script>
             <p id="demo"></p>
             <script>
             var d ;
             var ran = Math.floor((Math.random() * 3));
-          
+
             $.ajax({
                   url: '/question',
                   complete: function(data, err) {
-                  console.log(err);
 
-                  console.log(data.responseJSON.no);
                   if(ran==0)
                   d = data.responseJSON.no1;
                   if(ran==1)
@@ -116,11 +109,28 @@ and open the template in the editor.
                   document.getElementById("n").style.visibility = "visible";
                 }
         }
+
+
         </script>
-        <form action="/point" method="post">
-            <button type="submit" id="y" value="yes" name="answer">ใช่</button><br>
-            <button type="submit" id="n" value="no" name="answer">ไม่</button><br>
-      </form>
+
+            <button  id="y" value="yes" name="answer" onclick="onclickScore()">ใช่</button><br>
+            <button  id="n" value="no" name="answer">ไม่</button><br>
+
+            <from action="/tutorial_game" method="post" type="submit" >
+              <button  id="score" value="no" name="sc">ไปดูคะแนนกันเลย</button><br>
+            </from>
+      <script>
+      var score = 0;
+          function onclickScore() {
+              score ++ ;
+                console.log(score);
+            }
+
+            var parseScore = document.getElementById("score");
+            parseScore.value = score.toString();
+            console.log(parseScore);
+
+      </script>
 
             </h6>
 
