@@ -81,7 +81,8 @@ and open the template in the editor.
             <button type="submit" id="n" value="no" name="answer" onclick="onclickScoreNo()">ไม่</button><br>-->
 
             <center><h2>จงมีสมาธิ !!</h2>
-            <p1 id = "no"></p1><p2 id="slash">/3<p2></center>
+              <style> #no,#slash{display:inline;}</style>
+            <h1 id = "no"></h1><h1 id="slash">/3</h1></center>
 
 
               <center><h3><a onclick="changepoint()" id="start" class="btn btn-info btn-lg w3-blue" style="width:30%" >Start Game</button></a></h3></center>
@@ -101,6 +102,8 @@ and open the template in the editor.
       </form>
 
       <script>
+
+      alert('มีทั้งหมด 3 ข้อ เตรียมตัวให้ดีนะจ้ะ');
 
       var no = 1;
       var noStr = no +"/3"
@@ -161,13 +164,13 @@ and open the template in the editor.
 
     function changepoint(){
       console.log(noStr);
-
+      document.getElementById("slash").style.visibility = "hidden";
       document.getElementById("no").innerHTML = no;
       var timer = timer();
       var timee;
       function timer() {
         var ranTime = Math.floor((Math.random() * 4));
-        var time = [200, 400, 800, 1000];
+        var time = [200, 200, 200, 200];
         timee = setInterval(myTimer, 200);
       }
 

@@ -7,10 +7,6 @@ var fs = require('fs');
 var obj;
 var score ;
 var jsonScore;
-var jsonfile = require('jsonfile')
-var file = './score.json'
-
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -24,8 +20,18 @@ fs.readFile('./question.json', 'utf8', function (err, data) {
 });
 
 app.get('/', function getHomePage(req, res) {
+
     res.sendFile(__dirname + '/views/home.html');
 });
+
+app.post('/', function(req,res){
+    var str = '{score:'+score+'}';
+
+    fs.writeFile('./scoree.json',str,"utf-8",function(err){
+     
+    });
+    res.sendFile(__dirname + '/views/home.html');
+})
 
 app.get('/tutorial_game', function getAboutPage(req, res) {
     res.sendFile(__dirname + '/views/tutorial_game.html');
@@ -56,12 +62,7 @@ app.get('/get_score', function (req, res) {
      res.json(jsonScore);
 
 });
-jsonfile.writeFile(file, jsonScore, function(err) {
-  console.log(err);
-});
-function writeFile() {
 
-}
 
 var server = app.listen(8080, function() {
     console.log('Express is running on port 8080.');
